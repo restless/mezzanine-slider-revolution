@@ -1,0 +1,7 @@
+{% load i18n %}
+<div class="dynamic-inline">
+    {% include "admin/edit_inline/tabular.html" %}
+    <p class="add-new"
+        style="margin:10px; font-weight:bold; text-align:right;">
+        <a href="{% url "admin:slider_revolution_slide_add" %}">{% trans "Add new Slide" %}</a></p>
+</div>

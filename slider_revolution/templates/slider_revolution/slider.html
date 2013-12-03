@@ -1,0 +1,23 @@
+{% load mezzanine_tags translate_tags %}
+
+<div id="{{ slider.slug }}">
+    <ul>
+        {% for slide in slides %}
+            <li data-transition="{{ slide.transition|join:" " }}" data-slotamount="10" data-masterspeed="300">
+            <!--  BACKGROUND IMAGE -->
+            <img src="{{ MEDIA_URL }}{{ slide.image }}" alt="" />
+            {% for caption in slide.captions.all %}
+                <!-- THE CAPTIONS IN THIS SLIDE -->
+                <div class="caption {{ caption.styling_caption|default_if_none:"" }} {{ caption.incoming_animation|default_if_none:"" }} {{ caption.outgoing_animation|default_if_none:"" }}"
+                    data-x="{{ caption.datax|default_if_none:"" }}"
+                    data-y="{{ caption.datay|default_if_none:"" }}"
+                    data-speed="{{ caption.data_speed|default_if_none:"" }}"
+                    data-start="{{ caption.data_start|default_if_none:"" }}"
+                    data-easing="easeOutExpo">
+                    {{ caption.caption }}
+                </div>
+            {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
