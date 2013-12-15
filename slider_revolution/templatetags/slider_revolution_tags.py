@@ -17,7 +17,6 @@ def slider(context, slug):
         context['slider'] = slider
         context['slides'] = slides
     except Slider.DoesNotExist:
-        print 'none'
         context['slider'] = None
     return context
 
