@@ -10,11 +10,15 @@ def slider(context, slug):
     """
     Renders a slider.
     """
-    slider = Slider.objects.get(slug=slug)
-    settings.use_editable()
-    slides = slider.slides.all()
-    context['slider'] = slider
-    context['slides'] = slides
+    try:
+        slider = Slider.objects.get(slug=slug)
+        settings.use_editable()
+        slides = slider.slides.all()
+        context['slider'] = slider
+        context['slides'] = slides
+    except Slider.DoesNotExist:
+        print 'none'
+        context['slider'] = None
     return context
 
 
