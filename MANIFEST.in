@@ -1,4 +1,4 @@
-include LICENCE
+include LICENSE
 include README.md
 recursive-include slider_revolution/static *
 recursive-include slider_revolution/templates *
