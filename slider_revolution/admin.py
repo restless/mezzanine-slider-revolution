@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.core import urlresolvers
 from mezzanine.core.admin import TabularDynamicInlineAdmin, StackedDynamicInlineAdmin
 
-from slider_revolution.models import Slider, SlideCaption, Slide
+from .models import Slider, SlideCaption, Slide
 
 
 class SlideInline(TabularDynamicInlineAdmin):
